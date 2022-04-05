@@ -5,5 +5,6 @@ class EbookSpider(scrapy.Spider):
     start_urls = ["https://books.toscrape.com/"]
 
     def parse(self, response):
-        print("[OUR RESPONSE]")
-        print(response)
+        print("[ parse ]")
+        
+        print(response.css("h3 a::text").get())
