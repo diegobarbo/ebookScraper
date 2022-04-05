@@ -7,13 +7,5 @@ class EbookSpider(scrapy.Spider):
     def parse(self, response):
         print("[ parse ]")
         
-        ebooks = response.css("article")
-        
-        for ebook in ebooks:
-            title = ebook.css('a::text').get()
-            price = ebook.css('p.price_color::text').get()
-
-            yield {
-                'title': title,
-                'price': price
-            }
+        print('[css]:', response.css('h3 a::text')[0])
+        print('[xpath]:', response.xpath('//h3/a/text()')[0])
