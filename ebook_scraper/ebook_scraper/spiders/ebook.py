@@ -8,6 +8,7 @@ from scrapy.loader import ItemLoader
 class EbookSpider(scrapy.Spider):
     name = "ebook"
     start_urls = ["https://books.toscrape.com/catalogue/category/books/travel_2/"]
+    cols = ["Title", "Price"]
 
     def parse(self, response):
         ebooks = response.css("article.product_pod")
