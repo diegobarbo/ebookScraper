@@ -7,5 +7,4 @@ class EbookSpider(scrapy.Spider):
     def parse(self, response):
         print("[ parse ]")
         
-        print('[css]:', response.css('h3 a::text')[0])
-        print('[xpath]:', response.xpath('//h3/a/text()')[0])
+        print(response.css('a[title = "Soumission"]').get())
