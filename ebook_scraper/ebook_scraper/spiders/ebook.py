@@ -7,4 +7,4 @@ class EbookSpider(scrapy.Spider):
     def parse(self, response):
         print("[ parse ]")
         
-        print(response.xpath("//h3/a").get())
+        print(response.xpath("//p[@class = 'price_color']").get())
